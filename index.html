@@ -1,12 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="./style.css">
-  <title>My Mintlify</title>
-</head>
-<body>
-  <h1>Hello, Mintlify!</h1>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="/style.css" />
+    <title>My Mintlify</title>
+  </head>
+
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="logo">
+        <img src="./assets/logo.svg" alt="Mintlify Logo" />
+      </div>
+
+      <div class="nav-links">
+        <a href="#">Resources</a>
+        <a href="#">Documentation</a>
+        <a href="#">Customers</a>
+        <a href="#">Blog</a>
+        <a href="#">Pricing</a>
+
+        <div class="nav-cta">
+          <button class="contact-sales">Contact Sales</button>
+          <button class="start-for-free">Start for free</button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+      <div class="hero-text">
+        <div class="hero-badge">
+          <button>NEW</button>
+          <span>Self-updating docs with agent suggestions </span>
+          <i
+            class="fa fa-arrow-right"
+            style="
+              background-color: white;
+              color: black;
+              height: 20px;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              width: 20px;
+              border-radius: 50px;
+            "
+          ></i>
+        </div>
+        <h1>
+          The Intelligent <br />
+          Knowledge Platform
+        </h1>
+
+        <p>
+          Helping teams create and maintain world-class <br />
+          documentation built for both humans and AI
+        </p>
+
+        <div class="hero-input-cta">
+          <input type="email" placeholder="Email address" />
+          <button>Start now</button>
+        </div>
+
+        <div class="hero-image-dark">
+          <img src="./assets/hero-image-dark.svg" alt="Hero Illustration" />
+        </div>
+      </div>
+
+      <div class="hero-image">
+        <img src="./assets/hero-image.svg" alt="Hero Illustration" />
+      </div>
+    </section>
+  </body>
 </html>
