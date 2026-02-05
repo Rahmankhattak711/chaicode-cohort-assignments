@@ -1,0 +1,941 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mintlify - The Intelligent Knowledge Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <!-- ==================== NAVIGATION ==================== -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+      <div class="nav-logo">
+        <a href="/" aria-label="Mintlify home">
+          <img
+            src="./assets/logo.svg"
+            alt="Mintlify Logo"
+            width="140"
+            height="32"
+            loading="eager"
+          />
+        </a>
+      </div>
+      <div class="nav-links">
+        <a href="#resources">Resources</a>
+        <a href="#documentation">Documentation</a>
+        <a href="#customers">Customers</a>
+        <a href="#blog">Blog</a>
+        <a href="#pricing">Pricing</a>
+        <div class="nav-cta">
+          <button
+            type="button"
+            class="contact-sales"
+            aria-label="Contact Sales Team"
+          >
+            Contact Sales
+          </button>
+          <button
+            type="button"
+            class="start-for-free"
+            aria-label="Start using Mintlify for free"
+          >
+            Start for free
+          </button>
+        </div>
+      </div>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" aria-labelledby="hero-heading">
+      <div class="hero-text">
+        <div
+          class="hero-badge"
+          role="status"
+          aria-label="New feature announcement"
+        >
+          <span class="badge-pill">NEW</span>
+          <span>Self-updating docs with agent suggestions</span>
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="12" fill="#ffffff" />
+            <path
+              d="M10 8l4 4-4 4"
+              stroke="#000"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
+          </svg>
+        </div>
+        <h1 id="hero-heading">
+          The Intelligent <br />
+          Knowledge Platform
+        </h1>
+        <p>
+          Helping teams create and maintain world-class <br />
+          documentation built for both humans and AI
+        </p>
+        <form
+          class="hero-input-cta"
+          action="/signup"
+          method="post"
+          aria-label="Email signup form"
+        >
+          <input
+            type="email"
+            name="email"
+            placeholder="Email address"
+            aria-label="Enter your email address"
+            required
+            autocomplete="email"
+          />
+          <button type="submit" aria-label="Start now with Mintlify">
+            Start now
+          </button>
+        </form>
+        <div class="hero-image-dark">
+          <img
+            src="./assets/hero-image-light.svg"
+            alt="Mintlify platform interface showing documentation features"
+            loading="eager"
+            width="1000"
+            height="600"
+          />
+        </div>
+        <div class="trustpilot-hero" aria-label="Trusted by leading companies">
+          <div>
+            <img
+              class="logo-img"
+              src="https://upload.wikimedia.org/wikipedia/commons/7/78/Anthropic_logo.svg"
+              alt="Anthropic"
+              loading="lazy"
+            />
+            <img
+              class="logo-img"
+              src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Coinbase.svg"
+              alt="Coinbase"
+              loading="lazy"
+            />
+            <img
+              class="logo-img"
+              src="https://upload.wikimedia.org/wikipedia/commons/4/44/Microsoft_logo.svg"
+              alt="Microsoft"
+              loading="lazy"
+            />
+            <img
+              class="logo-img"
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/1d/Perplexity_AI_logo.svg/1280px-Perplexity_AI_logo.svg.png"
+              alt="Perplexity AI"
+              loading="lazy"
+            />
+          </div>
+          <div class="trustpilot-hero-row-2">
+            <img
+              class="logo-img"
+              src="https://upload.wikimedia.org/wikipedia/commons/3/3f/HubSpot_Logo.svg"
+              alt="HubSpot"
+              loading="lazy"
+            />
+            <img
+              class="logo-img"
+              src="https://img.freepik.com/free-vector/twitter-new-2023-x-logo-white-background-vector_1017-45422.jpg"
+              alt="X (formerly Twitter)"
+              loading="lazy"
+            />
+            <img
+              class="logo-img"
+              src="https://upload.wikimedia.org/wikipedia/commons/b/b5/PayPal.svg"
+              alt="PayPal"
+              loading="lazy"
+            />
+            <img
+              class="logo-img"
+              src="https://lovable.dev/img/logo/lovable-dark-png.png"
+              alt="Lovable"
+              loading="lazy"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- Background Image -->
+      <div class="hero-image" aria-hidden="true">
+        <img src="./assets/bg-light.svg" alt="" loading="eager" />
+      </div>
+    </section>
+
+    <!-- ==================== INTELLIGENCE AGE DOCS ==================== -->
+    <section
+      class="intelligence-age-docs"
+      aria-labelledby="intelligence-heading"
+    >
+      <header class="intelligence-heading">
+        <h2 id="intelligence-heading">Built for the intelligence age</h2>
+        <p>
+          Integrate AI into every part of your docs lifecycle. Woven into how
+          your <br />
+          knowledge is written, maintained, and understood by both users and
+          LLMs.
+        </p>
+      </header>
+
+      <div class="intelligence-cards">
+        <article>
+          <span>LLMs.txt & MCP</span>
+          <h3>Built for both people and AI</h3>
+          <p>
+            Ensure your product shows up in the AI <br />
+            workflows users already rely on. We support <br />
+            llms.txt, MCP, and whatever comes next.
+          </p>
+          <video
+            class="short-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            aria-label="Demo of AI integration features"
+          >
+            <source src="assets/video-1.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </article>
+
+        <article>
+          <span>agent</span>
+          <h3>Self-updating knowledge management</h3>
+          <p>
+            Draft, edit, and maintain content with a <br />
+            context-aware agent. Move faster and more <br />
+            consistently without the documentation debt.
+          </p>
+          <video
+            class="short-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            aria-label="Demo of self-updating documentation features"
+          >
+            <source src="assets/video-3.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </article>
+
+        <article class="third-card">
+          <span>Assistant</span>
+          <h3>Intelligent assistance for your users</h3>
+          <p>
+            Turn every documentation visit into a guided conversation. Your
+            <br />
+            AI assistant understands context and delivers what users need.
+          </p>
+          <video
+            class="short-video"
+            autoplay
+            muted
+            loop
+            playsinline
+            aria-label="Demo of AI assistant features"
+          >
+            <source src="assets/video-3.mp4" type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
+        </article>
+      </div>
+    </section>
+
+    <!-- ==================== ENTERPRISE SECTION ==================== -->
+    <section class="enterprise" aria-labelledby="enterprise-heading">
+      <div class="container">
+        <header class="enterprise-header">
+          <span class="section-tag">ENTERPRISE-REINVENTION</span>
+          <div class="header-content">
+            <div class="header-text">
+              <h2 id="enterprise-heading" class="enterprise-title">
+                Bring intelligence to<br />enterprise knowledge
+              </h2>
+              <p class="enterprise-subtitle">
+                Modernize without the rebuild with enterprise-grade professional
+                service & security.
+              </p>
+            </div>
+            <button
+              class="explore-dark"
+              aria-label="Explore enterprise features"
+            >
+              Explore for enterprise
+            </button>
+          </div>
+        </header>
+
+        <!-- Enterprise Features Grid -->
+        <div class="enterprise-features">
+          <!-- Feature 1: Partnership -->
+          <article class="enterprise-feature">
+            <div class="icon-circle" aria-hidden="true">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="build-svg"
+              >
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M5.50781 2.75C5.50781 1.3689 6.62671 0.25 8.00781 0.25C9.3889 0.25 10.5078 1.3689 10.5078 2.75C10.5078 4.1311 9.3889 5.25 8.00781 5.25C6.62671 5.25 5.50781 4.1311 5.50781 2.75Z"
+                  fill="currentColor"
+                />
+                <path
+                  opacity="0.2"
+                  d="M10.2991 3.75188C11.6788 4.38813 12.7509 5.57959 13.228 7.03861C13.3568 7.4323 13.7803 7.64709 14.174 7.51835C14.5677 7.38961 14.7825 6.96609 14.6537 6.57239C13.9915 4.54733 12.4324 2.9301 10.4446 2.18878C10.4859 2.36918 10.5078 2.55703 10.5078 2.75C10.5078 3.10632 10.4333 3.44518 10.2991 3.75188Z"
+                  fill="currentColor"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M10.696 11.75C10.696 10.3689 11.8149 9.25 13.196 9.25C14.5771 9.25 15.696 10.3689 15.696 11.75C15.696 13.1311 14.5771 14.25 13.196 14.25C11.8149 14.25 10.696 13.1311 10.696 11.75Z"
+                  fill="currentColor"
+                />
+                <path
+                  opacity="0.2"
+                  d="M11.1854 13.2362C9.9428 14.1175 8.37078 14.4517 6.86472 14.1337C6.45945 14.0481 6.06153 14.3072 5.97593 14.7125C5.89034 15.1178 6.1495 15.5157 6.55477 15.6013C8.64416 16.0426 10.8294 15.4991 12.4672 14.1421C11.9481 13.9843 11.5007 13.6621 11.1854 13.2362Z"
+                  fill="currentColor"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M0.319344 11.75C0.319344 10.3689 1.43823 9.25 2.81934 9.25C4.20044 9.25 5.31934 10.3689 5.31934 11.75C5.31934 13.1311 4.20044 14.25 2.81934 14.25C1.43823 14.25 0.319344 13.1311 0.319344 11.75Z"
+                  fill="currentColor"
+                />
+                <path
+                  opacity="0.2"
+                  d="M3.90389 5.07739C4.18047 4.76904 4.15471 4.29487 3.84636 4.01829C3.53801 3.74172 3.06384 3.76747 2.78726 4.07582C1.35956 5.66754 0.739434 7.83649 1.09963 9.9352C1.4803 9.5743 1.97448 9.3321 2.52317 9.2673C2.38111 7.75132 2.87666 6.22263 3.90389 5.07739Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <h4>Build with partnership</h4>
+            <p>
+              Direct, white-glove access to our documentation experts. <br />
+              Dedicated migration support and guidance tailored to <br />
+              your setup, and elevated support SLAs.
+            </p>
+          </article>
+
+          <!-- Feature 2: Compliance -->
+          <article class="enterprise-feature">
+            <div class="icon-circle" aria-hidden="true">
+              <svg
+                width="30"
+                height="30"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="build-svg"
+              >
+                <path
+                  opacity="0.2"
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8.16963 1.22703C8.33372 1.16922 8.67031 1.05063 9.00028 1.05075C9.1795 1.05082 9.36084 1.079 9.53357 1.13368L14.7836 2.81368C15.5071 3.04612 16 3.71943 16 4.48V11C16 12.8725 14.6025 14.2314 13.2749 15.1143C12.1533 15.8602 10.9062 16.4082 9.63302 16.8379C9.57968 16.8559 9.49355 16.8849 9.40738 16.9058C9.09216 16.9819 8.76807 16.9684 8.46011 16.8683C7.80803 16.6572 6.25089 16.1022 4.84192 15.1909C3.47441 14.3064 2 12.9239 2 11V4.48C2 3.71932 2.49139 3.04506 3.21675 2.81358C4.86562 2.28594 6.53686 1.80232 8.16963 1.22703Z"
+                  fill="currentColor"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8.99999 5.5C7.75726 5.5 6.75061 6.50714 6.75061 7.74938C6.75061 8.72872 7.37626 9.56194 8.25 9.87075V12.5C8.25 12.9142 8.58579 13.25 9 13.25C9.41421 13.25 9.75 12.9142 9.75 12.5V9.87074C10.6237 9.56193 11.2494 8.72871 11.2494 7.74938C11.2494 6.50714 10.2427 5.5 8.99999 5.5Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <h4>Compliance and access control</h4>
+            <p>
+              Compliant with SOC 2, and in the process for ISO/27001 and GDPR
+              <br />
+              compliance to meet your internal and external data requirements.
+              <br />
+              Secure access and provisioning with SAML-based SSO.
+            </p>
+          </article>
+        </div>
+
+        <!-- Customer Story Card -->
+        <article class="customer-card">
+          <div class="card-content">
+            <span class="card-label">CUSTOMER STORY</span>
+            <h2 class="card-title">
+              See how Anthropic accelerates<br />AI development with Mintlify
+            </h2>
+            <a href="#anthropic-story" class="card-link">
+              Read story
+              <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+            </a>
+
+            <!-- Stats Grid -->
+            <div class="stats-grid">
+              <div class="stat">
+                <h3>2M+</h3>
+                <p>Monthly active developers</p>
+              </div>
+              <div class="stat">
+                <h3>3+</h3>
+                <p>Products serviced: Claude <br />API, MCP, and Claude Code</p>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <!-- Enterprise Client Logos -->
+        <div
+          class="enterprise-logos"
+          role="list"
+          aria-label="Enterprise clients"
+        >
+          <img
+            class="enterprise-logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/7/78/Anthropic_logo.svg"
+            alt="Anthropic"
+            loading="lazy"
+          />
+          <img
+            class="enterprise-logo grey-scale"
+            src="https://upload.wikimedia.org/wikipedia/commons/1/1a/Coinbase.svg"
+            alt="Coinbase"
+            loading="lazy"
+          />
+          <img
+            class="enterprise-logo grey-scale"
+            src="https://upload.wikimedia.org/wikipedia/commons/3/3f/HubSpot_Logo.svg"
+            alt="HubSpot"
+            loading="lazy"
+          />
+          <img
+            class="enterprise-logo grey-scale"
+            src="https://cdn.worldvectorlogo.com/logos/zapier-2.svg"
+            alt="Zapier"
+            loading="lazy"
+          />
+          <img
+            class="enterprise-logo grey-scale att"
+            src="https://cdn.freebiesupply.com/images/large/2x/att-logo-black-transparent.png"
+            alt="AT&T"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== CUSTOMERS SECTION ==================== -->
+    <section class="customers" aria-labelledby="customers-heading">
+      <header class="customer-header">
+        <span class="customer">CUSTOMERS</span>
+        <h2 id="customers-heading" class="section-title">
+          Unlock knowledge for any industry
+        </h2>
+        <p id="section-subtitle">
+          From frontier AI companies to consumer brands, leaders across
+          industries scale <br />
+          with Mintlify.
+        </p>
+      </header>
+
+      <div class="slider-window">
+        <div class="cards-track" role="list">
+          <article class="card" role="listitem">
+            <div class="card-image">
+              <img
+                src="./assets/perplexity.webp"
+                alt="Perplexity AI platform interface"
+                loading="lazy"
+              />
+              <span class="logo" aria-hidden="true">
+                <img
+                  id="logo-img"
+                  src="https://images.seeklogo.com/logo-png/61/2/perplexity-ai-logo-png_seeklogo-611677.png"
+                  alt=""
+                />
+              </span>
+            </div>
+            <p>
+              How Perplexity transformed its documentation into an AI-native
+              developer experience that matches their innovative platform
+            </p>
+            <a href="#perplexity-story">
+              Read story
+              <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article class="card" role="listitem">
+            <div class="card-image">
+              <img
+                src="./assets/x.webp"
+                alt="X (formerly Twitter) developer platform"
+                loading="lazy"
+              />
+              <span class="logo-x" aria-hidden="true">
+                <img
+                  id="logo-img-white"
+                  src="https://uxwing.com/wp-content/themes/uxwing/download/brands-and-social-media/x-social-media-white-icon.png"
+                  alt=""
+                />
+              </span>
+            </div>
+            <p>
+              How X is using Mintlify to power the developer experience for the
+              global town square
+            </p>
+            <a href="#x-story">
+              Read story
+              <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article class="card" role="listitem">
+            <div class="card-image">
+              <img
+                src="./assets/kalshi.webp"
+                alt="Kalshi trading platform"
+                loading="lazy"
+              />
+              <span class="logo-kalshi" aria-hidden="true">
+                <img id="logo-img-kalshi" src="./assets/kalshi.webp" alt="" />
+              </span>
+            </div>
+            <p>
+              How Kalshi helps developers discover what's possible faster and
+              ultimately drive broader adoption
+            </p>
+            <a href="#kalshi-story">
+              Read story
+              <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+            </a>
+          </article>
+        </div>
+      </div>
+
+      <!-- Navigation Buttons -->
+      <nav class="nav-buttons" aria-label="Customer stories slider navigation">
+        <button class="nav-btn" aria-label="Previous customer story">‹</button>
+        <button class="nav-btn dark" aria-label="Next customer story">›</button>
+      </nav>
+    </section>
+
+    <!-- ==================== CTA SECTION ==================== -->
+    <section class="cta" aria-labelledby="cta-heading">
+      <div class="container">
+        <h2 id="cta-heading">Make documentation<br />your winning advantage</h2>
+        <p id="cta-subtitle">
+          Join the leaders of tomorrow to future proof your documentation today.
+        </p>
+
+        <div class="cta-buttons">
+          <button
+            class="btn-primary"
+            aria-label="Get started with Mintlify for free"
+          >
+            Get started for free
+          </button>
+          <button
+            class="btn-secondary-white"
+            aria-label="Schedule a demo with Mintlify"
+          >
+            Get a demo
+          </button>
+        </div>
+
+        <div class="cta-features">
+          <article class="cta-feature">
+            <div class="icon-small" aria-hidden="true">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="build-svg cta-svg-border"
+              >
+                <path
+                  opacity="0.2"
+                  d="M7.56788 0.89724C8.72116 0.409204 10 1.2559 10 2.509V6H8.75C7.78379 6 7 6.78379 7 7.75V16.25C7 16.6631 7.33394 16.9981 7.74658 17H2.75C2.33579 17 2 16.6642 2 16.25V4.41199C2 3.7099 2.41973 3.07374 3.06862 2.79992L7.56788 0.89724Z"
+                  fill="currentColor"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M8.75 6C7.78379 6 7 6.78379 7 7.75V16.25C7 16.6642 7.33579 17 7.75 17H15.25C15.6642 17 16 16.6642 16 16.25V7.75C16 6.78379 15.2162 6 14.25 6H8.75ZM10.25 9C10.6642 9 11 9.33579 11 9.75V10.25C11 10.6642 10.6642 11 10.25 11C9.83579 11 9.5 10.6642 9.5 10.25V9.75C9.5 9.33579 9.83579 9 10.25 9ZM13.5 9.75C13.5 9.33579 13.1642 9 12.75 9C12.3358 9 12 9.33579 12 9.75V10.25C12 10.6642 12.3358 11 12.75 11C13.1642 11 13.5 10.6642 13.5 10.25V9.75ZM10.25 12C10.6642 12 11 12.3358 11 12.75V13.25C11 13.6642 10.6642 14 10.25 14C9.83579 14 9.5 13.6642 9.5 13.25V12.75C9.5 12.3358 9.83579 12 10.25 12ZM13.5 12.75C13.5 12.3358 13.1642 12 12.75 12C12.3358 12 12 12.3358 12 12.75V13.25C12 13.6642 12.3358 14 12.75 14C13.1642 14 13.5 13.6642 13.5 13.25V12.75Z"
+                  fill="currentColor"
+                />
+                <path
+                  fill-rule="evenodd"
+                  clip-rule="evenodd"
+                  d="M1 16.25C1 15.8358 1.33579 15.5 1.75 15.5H16.25C16.6642 15.5 17 15.8358 17 16.25C17 16.6642 16.6642 17 16.25 17H1.75C1.33579 17 1 16.6642 1 16.25Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <h4>Pricing on your terms</h4>
+            <p>Pick the plan that works best for you</p>
+            <a href="#pricing">
+              Pricing details
+              <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+            </a>
+          </article>
+
+          <article class="cta-feature">
+            <div class="icon-small" aria-hidden="true">
+              <svg
+                width="48"
+                height="48"
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                class="cta-svg-border build-svg"
+              >
+                <path
+                  d="M5.37701 2.01401C3.78843 2.01401 2.56755 2.561 1.85582 2.9811C1.31588 3.29978 1.00101 3.87517 1.00101 4.48701V13.57C1.00101 14.7707 2.20639 15.6627 3.36965 15.2049C3.9013 14.9951 4.57667 14.8229 5.36584 14.822C6.60305 14.8203 7.5635 15.2391 8.13255 15.5674C8.39841 15.7201 8.69579 15.801 9.00001 15.801V3.05078C8.29992 2.62423 7.0284 2.01401 5.37701 2.01401Z"
+                  fill="currentColor"
+                />
+                <path
+                  opacity="0.2"
+                  d="M12.623 2.01401C14.2116 2.01401 15.4325 2.561 16.1442 2.9811C16.6841 3.29978 16.999 3.87517 16.999 4.48701V13.57C16.999 14.7707 15.7936 15.6627 14.6304 15.2049C14.0987 14.9951 13.4233 14.8229 12.6342 14.822C11.397 14.8203 10.4379 15.2383 9.86882 15.5666C9.60296 15.7193 9.30422 15.801 9 15.801V3.05078C9.70009 2.62423 10.9716 2.01401 12.623 2.01401Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </div>
+            <h4>Start building</h4>
+            <p>Deploy your documentation in minutes</p>
+            <a href="#quickstart">
+              Quickstart
+              <i class="fa-solid fa-angle-right" aria-hidden="true"></i>
+            </a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer" role="contentinfo">
+      <div class="footer-container">
+        <div class="footer-logo-section">
+          <div class="footer-logo">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 19 19"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+            >
+              <path
+                d="M18.367 7.28888V1.59755C18.367 0.986819 17.8715 0.5 17.2699 0.5H11.5812C10.6877 0.5 9.80295 0.677018 8.98017 1.01336C8.15738 1.35856 7.40539 1.85424 6.77724 2.49152L6.733 2.53578C5.90137 3.37664 5.30862 4.42108 5.00781 5.57174C5.54749 5.43012 6.10483 5.35931 6.6622 5.35046C8.14852 5.33276 9.60831 5.81073 10.7938 6.7047C11.8643 7.50131 12.6783 8.59885 13.1206 9.86458C13.5807 11.148 13.6337 12.5465 13.2887 13.8653C14.43 13.5644 15.4828 12.9714 16.3233 12.1393L16.3675 12.0951C16.9957 11.4667 17.4999 10.7143 17.845 9.89114C18.19 9.06797 18.3581 8.18285 18.3581 7.28888H18.367Z"
+                fill="#18E299"
+              />
+              <path
+                d="M4.83793 7.193C4.84674 5.44706 5.54303 3.77167 6.76814 2.51953L2.03511 7.25472C2.01749 7.27236 1.99985 7.28117 1.98222 7.29881C0.827615 8.44513 0.131342 9.97945 0.0167623 11.6019C-0.0890033 13.1186 0.307609 14.6176 1.15373 15.8698C1.23444 15.9892 1.45343 16.0285 1.57682 15.9139L4.47656 13.0216C5.38438 12.1134 5.66643 10.7642 5.23455 9.55618C4.96132 8.80666 4.82912 8.00424 4.83793 7.193Z"
+                fill="#0C8C5E"
+              />
+              <path
+                d="M16.341 12.0938C15.4332 12.9844 14.2962 13.6016 13.0623 13.875C11.8195 14.1483 10.5327 14.0689 9.33405 13.6457C9.33405 13.6457 9.32522 13.6457 9.31641 13.6457C8.10892 13.2136 6.76042 13.4958 5.8526 14.3952L2.95282 17.2875C2.82943 17.4109 2.84706 17.6137 2.99689 17.7107C4.24845 18.5484 5.74683 18.954 7.26281 18.8482C8.88455 18.7336 10.4093 18.037 11.5639 16.8818L11.608 16.8378L16.341 12.1026V12.0938Z"
+                fill="#0C8C5E"
+              />
+            </svg>
+            mintlify
+          </div>
+
+          <nav class="social-links" aria-label="Social media links">
+            <a
+              href="https://linkedin.com/company/mintlify"
+              class="social-icon"
+              aria-label="Follow us on LinkedIn"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg
+                width="21"
+                height="20"
+                viewBox="0 0 21 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M11.4595 11.5714V18.889H8.06641V6.24428H11.2672L11.3238 9.39982H11.1202C11.452 8.3442 11.9534 7.52987 12.6244 6.95682C13.3031 6.37623 14.1777 6.08594 15.2484 6.08594C16.1231 6.08594 16.8846 6.27821 17.5331 6.66275C18.189 7.03976 18.6942 7.58642 19.0486 8.30273C19.4105 9.0115 19.5915 9.85977 19.5915 10.8475V18.889H16.1985V11.4356C16.1985 10.6515 15.9949 10.0369 15.5877 9.59209C15.1881 9.14722 14.6301 8.92479 13.9138 8.92479C13.4388 8.92479 13.0128 9.03035 12.6358 9.24148C12.2663 9.44506 11.976 9.74289 11.7649 10.135C11.5613 10.5271 11.4595 11.0059 11.4595 11.5714Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M1.77748 18.889V6.2442H5.17054V18.889H1.77748ZM3.47401 4.59292C2.96128 4.59292 2.52395 4.42326 2.16203 4.08396C1.8001 3.74465 1.61914 3.33372 1.61914 2.85115C1.61914 2.36858 1.8001 1.95765 2.16203 1.61834C2.52395 1.27903 2.96128 1.10938 3.47401 1.10938C3.98674 1.10938 4.42406 1.27903 4.78599 1.61834C5.15546 1.9501 5.34019 2.36104 5.34019 2.85115C5.34019 3.33372 5.15546 3.74465 4.78599 4.08396C4.42406 4.42326 3.98674 4.59292 3.47401 4.59292Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://x.com/mintlify"
+              class="social-icon"
+              aria-label="Follow us on X (formerly Twitter)"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg
+                width="22"
+                height="20"
+                viewBox="0 0 22 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M12.1188 8.75562L18.0382 1.875H16.6357L11.4957 7.84938L7.39062 1.875H2.65625L8.86375 10.9094L2.65625 18.125H4.05875L9.48625 11.8156L13.8213 18.125H18.5563L12.1188 8.75562ZM10.1975 10.9888L9.56875 10.0894L4.56437 2.93125H6.71875L10.7575 8.70812L11.3863 9.6075L16.6363 17.1169H14.4819L10.1975 10.9888Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://github.com/mintlify"
+              class="social-icon"
+              aria-label="Follow us on GitHub"
+              target="_blank"
+              rel="noopener"
+            >
+              <svg
+                width="22"
+                height="20"
+                viewBox="0 0 22 20"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M10.6055 1.46484C15.4399 1.46484 19.3555 5.38046 19.3555 10.2149C19.3543 13.9742 16.9561 17.3142 13.3949 18.5161C12.9574 18.6036 12.793 18.3299 12.793 18.1005C12.793 17.8049 12.8043 16.8642 12.8043 15.6942C12.8043 14.8742 12.5311 14.3492 12.2136 14.0755C14.1605 13.8567 16.2061 13.113 16.2061 9.75546C16.2061 8.79296 15.8668 8.01609 15.3093 7.40421C15.3968 7.18546 15.703 6.28859 15.2218 5.08546C15.2218 5.08546 14.4886 4.84484 12.8155 5.98234C12.1155 5.78546 11.3718 5.68734 10.628 5.68734C9.88422 5.68734 9.14047 5.78546 8.44047 5.98234C6.76735 4.85609 6.03422 5.08546 6.03422 5.08546C5.55297 6.28859 5.85922 7.18546 5.94672 7.40421C5.38922 8.01671 5.04985 8.80421 5.04985 9.75546C5.04985 13.1024 7.08422 13.8574 9.0311 14.0761C8.77922 14.2949 8.54985 14.678 8.47297 15.2461C7.96985 15.4761 6.71172 15.848 5.92485 14.5242C5.76047 14.2617 5.2686 13.6167 4.57985 13.6274C3.84672 13.6386 4.28485 14.043 4.59047 14.2067C4.96235 14.4142 5.3886 15.1911 5.48735 15.443C5.66235 15.9349 6.2311 16.8761 8.42922 16.4711C8.42922 17.2042 8.44047 17.893 8.44047 18.1005C8.44047 18.3305 8.2761 18.5924 7.8386 18.5161C4.26422 17.3261 1.8536 13.9817 1.85547 10.2142C1.85547 5.37984 5.7711 1.46484 10.6055 1.46484Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </a>
+          </nav>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer navigation">
+          <div class="footer-column">
+            <h3 class="column-title">EXPLORE</h3>
+            <ul class="link-list">
+              <li><a href="#startups" class="footer-link">Startups</a></li>
+              <li><a href="#enterprise" class="footer-link">Enterprise</a></li>
+              <li><a href="#switch" class="footer-link">Switch</a></li>
+              <li><a href="#oss" class="footer-link">OSS Program</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="column-title">RESOURCES</h3>
+            <ul class="link-list">
+              <li><a href="#customers" class="footer-link">Customers</a></li>
+              <li><a href="#blog" class="footer-link">Blog</a></li>
+              <li><a href="#pricing" class="footer-link">Pricing</a></li>
+              <li><a href="#guides" class="footer-link">Guides</a></li>
+              <li>
+                <a href="#features" class="footer-link">Feature Requests</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="column-title">DOCUMENTATION</h3>
+            <ul class="link-list">
+              <li>
+                <a href="#getting-started" class="footer-link"
+                  >Getting Started</a
+                >
+              </li>
+              <li><a href="#api" class="footer-link">API Reference</a></li>
+              <li><a href="#components" class="footer-link">Components</a></li>
+              <li><a href="#changelog" class="footer-link">Changelog</a></li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="column-title">COMPANY</h3>
+            <ul class="link-list">
+              <li><a href="#careers" class="footer-link">Careers</a></li>
+              <li>
+                <a href="#wall-of-love" class="footer-link">Wall of Love</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="footer-column">
+            <h3 class="column-title">LEGAL</h3>
+            <ul class="link-list">
+              <li><a href="#privacy" class="footer-link">Privacy Policy</a></li>
+              <li>
+                <a href="#disclosure" class="footer-link"
+                  >Responsible Disclosure</a
+                >
+              </li>
+              <li><a href="#terms" class="footer-link">Terms Of Service</a></li>
+              <li><a href="#security" class="footer-link">Security</a></li>
+              <li><a href="#dsr" class="footer-link">DSR/DSAR</a></li>
+            </ul>
+          </div>
+        </nav>
+
+        <div class="security-badge">
+          <span class="badge-text">Backed By Enterprise-Grade Security</span>
+          <div class="badge-icon" aria-label="SOC 2 Type II Certified">
+            <div class="badge-circle">
+              <svg
+                width="50"
+                height="50"
+                viewBox="0 0 50 50"
+                class="rotating-text"
+                aria-hidden="true"
+              >
+                <defs>
+                  <path
+                    id="circle-path"
+                    d="M 25 25 m -18 0 a 18 18 0 1 1 36 0 a 18 18 0 1 1 -36 0"
+                  ></path>
+                </defs>
+                <text font-size="2.8" fill="#9ca3af" class="circular-text">
+                  <textPath href="#circle-path" startOffset="0%">
+                    SOC for Service Organizations • Service Organization •
+                  </textPath>
+                </text>
+              </svg>
+              <div class="badge-center-text">AICPA<br />SOC II</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <div class="status-indicator">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span class="status-text">All systems normal</span>
+          </div>
+
+          <div class="copyright">
+            <span>© 2026 Mintlify, Inc.</span>
+          </div>
+
+          <div class="theme-switcher" role="group" aria-label="Theme selector">
+            <button
+              class="theme-button"
+              aria-label="System theme"
+              data-theme="system"
+            >
+              <svg
+                viewBox="0 0 19 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+              >
+                <g clip-path="url(#clip0_11851_40123)">
+                  <path
+                    d="M8.75014 14.53C7.82714 14.5901 6.91115 14.7549 6.02415 15.0339C5.62915 15.1589 5.41015 15.5791 5.53515 15.9751C5.65915 16.3691 6.07614 16.5869 6.47514 16.4651C8.43414 15.8482 10.5651 15.8482 12.5241 16.4651C12.5991 16.488 12.6751 16.5 12.7501 16.5C13.0681 16.5 13.3641 16.2949 13.4651 15.9761C13.5901 15.5811 13.3701 15.1599 12.9761 15.0349C12.0911 14.7549 11.1741 14.5901 10.2501 14.531V13.501H14.7501C14.7534 13.501 14.7564 13.5 14.7597 13.5H8.75014V14.53Z"
+                    fill="currentColor"
+                  />
+                  <path
+                    fill-rule="evenodd"
+                    clip-rule="evenodd"
+                    d="M14.75 2C16.267 2 17.5 3.2329 17.5 4.75V10.751C17.5 12.2646 16.2723 13.4946 14.7598 13.5H4.25C2.73311 13.4999 1.5 12.267 1.5 10.75V4.75C1.5 3.23298 2.73311 2.00013 4.25 2H14.75ZM7.60059 6.7207C7.03235 6.7207 6.57129 7.18176 6.57129 7.75C6.5713 8.31823 7.03235 8.7793 7.60059 8.7793H11.3994C11.9676 8.7793 12.4287 8.31823 12.4287 7.75C12.4287 7.18176 11.9677 6.7207 11.3994 6.7207H7.60059Z"
+                    fill="currentColor"
+                  />
+                </g>
+              </svg>
+            </button>
+            <button
+              class="theme-button active"
+              aria-label="Light theme"
+              aria-pressed="true"
+              data-theme="light"
+            >
+              <svg
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+              >
+                <path
+                  d="M9 3C9.414 3 9.75 2.664 9.75 2.25V1.25C9.75 0.836 9.414 0.5 9 0.5C8.586 0.5 8.25 0.836 8.25 1.25V2.25C8.25 2.664 8.586 3 9 3Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M13.773 4.977C13.965 4.977 14.157 4.904 14.303 4.757L15.01 4.05C15.303 3.757 15.303 3.282 15.01 2.989C14.717 2.696 14.242 2.696 13.949 2.989L13.242 3.696C12.949 3.989 12.949 4.464 13.242 4.757C13.388 4.903 13.581 4.977 13.773 4.977Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M16.75 8.25H15.75C15.336 8.25 15 8.586 15 9C15 9.414 15.336 9.75 15.75 9.75H16.75C17.164 9.75 17.5 9.414 17.5 9C17.5 8.586 17.164 8.25 16.75 8.25Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M14.303 13.243C14.01 12.95 13.535 12.95 13.242 13.243C12.949 13.536 12.949 14.011 13.242 14.304L13.949 15.011C14.095 15.157 14.287 15.231 14.479 15.231C14.671 15.231 14.863 15.158 15.009 15.011C15.302 14.718 15.302 14.243 15.009 13.95L14.302 13.243H14.303Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M9 15C8.586 15 8.25 15.336 8.25 15.75V16.75C8.25 17.164 8.586 17.5 9 17.5C9.414 17.5 9.75 17.164 9.75 16.75V15.75C9.75 15.336 9.414 15 9 15Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M3.697 13.243L2.99 13.95C2.697 14.243 2.697 14.718 2.99 15.011C3.136 15.157 3.328 15.231 3.52 15.231C3.712 15.231 3.904 15.158 4.05 15.011L4.757 14.304C5.05 14.011 5.05 13.536 4.757 13.243C4.464 12.95 3.99 12.95 3.697 13.243Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M3 9C3 8.586 2.664 8.25 2.25 8.25H1.25C0.836 8.25 0.5 8.586 0.5 9C0.5 9.414 0.836 9.75 1.25 9.75H2.25C2.664 9.75 3 9.414 3 9Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M3.697 4.757C3.843 4.903 4.035 4.977 4.227 4.977C4.419 4.977 4.611 4.904 4.757 4.757C5.05 4.464 5.05 3.989 4.757 3.696L4.05 2.989C3.757 2.696 3.282 2.696 2.989 2.989C2.696 3.282 2.696 3.757 2.989 4.05L3.697 4.757Z"
+                  fill="currentColor"
+                />
+                <path
+                  d="M9 14C11.7614 14 14 11.7614 14 9C14 6.23858 11.7614 4 9 4C6.23858 4 4 6.23858 4 9C4 11.7614 6.23858 14 9 14Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+            <button
+              class="theme-button"
+              aria-label="Dark theme"
+              data-theme="dark"
+            >
+              <svg
+                viewBox="0 0 18 18"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+              >
+                <path
+                  d="M15.705 9.22299C15.459 9.03999 15.126 9.02599 14.867 9.18599C13.999 9.71799 13.008 9.99899 12 9.99899C8.967 9.99899 6.5 7.53199 6.5 4.49899C6.5 3.35299 6.854 2.25199 7.523 1.31299C7.7 1.06399 7.709 0.731993 7.544 0.473993C7.38 0.215993 7.077 0.0879926 6.774 0.139993C2.994 0.846993 0.25 4.15199 0.25 7.99999C0.25 12.411 3.839 16 8.25 16C11.888 16 15.069 13.539 15.985 10.014C16.062 9.71799 15.951 9.40499 15.705 9.22299Z"
+                  fill="currentColor"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
