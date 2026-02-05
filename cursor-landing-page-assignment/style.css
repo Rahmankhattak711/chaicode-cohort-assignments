@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+:root {
+  --common-color: #1d1b15;
+  --text-color: #ffffff;
+  --background-color: #14120b;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+/* navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  font-size: 14px;
+  background-color: var(--background-color);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar .nav-logo img {
+  height: 24px;
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+.navbar .nav-links a {
+  color: var(--text-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.btn-outline {
+  background-color: transparent;
+  color: var(--text-color);
+  border: 2px solid var(--common-color);
+  padding: 6px 10px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.btn-bg {
+  background-color: var(--text-color);
+  color: var(--background-color);
+  padding: 6px 10px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* hero section */
+.hero {
+  height: auto;
+  padding: 20px;
+}
+
+.hero .hero-content {
+  margin-top: 130px;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
+
+.hero .hero-content h3 {
+  font-size: 28px;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.hero .hero-content button {
+  padding: 10px 20px;
+  font-size: 16px;
+}
+
+.hero .hero-image {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero .hero-image img {
+  width: 100%;
+  margin-top: 50px;
+  border-radius: 10px;
+}
+
+.hero .hero-image .img2 {
+  position: absolute;
+  width: 90%;
+  height: 80%;
+}
+
+/* trusted-companies */
+.trusted-companies {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.trusted-companies .logo-container {
+  display: flex;
+  gap: 30px;
+}
+
+.trusted-companies .trusted-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-color);
+}
+
+.trusted-companies .logo-container .logo-item {
+  width: 125px;
+  height: 100px;
+  background-color: var(--common-color);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.trusted-companies .logo-container .logo-item img{
+  width: 80px;
+}
