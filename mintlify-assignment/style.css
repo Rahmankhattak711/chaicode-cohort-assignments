@@ -204,11 +204,17 @@ button:active {
    =================================== */
 
 .navbar {
-  padding: 1rem 0;
+  padding: 1rem 20px;
+  border-radius: 20px;
   width: var(--container-width);
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr auto;
+  position: sticky;
+  top: 0px;
+  backdrop-filter: blur(40px);
+  -webkit-backdrop-filter: blur(90px);
+  z-index: 100;
 }
 
 .navbar .nav-logo {
