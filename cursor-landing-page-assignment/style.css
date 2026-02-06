@@ -5,8 +5,10 @@
 }
 :root {
   --common-color: #1d1b15;
+  --common-color2: #49433a;
   --text-color: #ffffff;
   --background-color: #14120b;
+  --link-color: #f54e07;
 }
 
 body {
@@ -138,6 +140,98 @@ body {
   align-items: center;
 }
 
-.trusted-companies .logo-container .logo-item img{
+.trusted-companies .logo-container .logo-item img {
   width: 80px;
+}
+
+/* agent section */
+.agent {
+  margin: 100px 30px;
+  display: flex;
+  padding: 20px;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  background-color: var(--common-color);
+  border-radius: 10px;
+}
+
+.agent .agent-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  gap: 20px;
+}
+
+.agent .agent-content p {
+  font-size: 20px;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.agent .agent-content a {
+  color: var(--link-color);
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.agent .agent-image {
+  width: 70%;
+  background-color: var(--common-color2);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 0px 40px 40px;
+}
+
+.agent .agent-image img {
+  width: 100%;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
+.agent .agent-video {
+  width: 70%;
+  background-color: var(--common-color2);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 40px 40px 40px;
+}
+
+.agent .agent-video video {
+  width: 100%;
+  border-radius: 10px;
+}
+
+.agent .agent-image-last {
+  width: 70%;
+  height: 600px;
+  background-color: var(--common-color2);
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 40px 40px 40px 0px;
+  position: relative;
+}
+
+.agent .agent-image-last .agent-last-img-one {
+  width: 70%;
+  position: absolute;
+  border-radius: 10px;
+  top: 10%;
+  left: 10%;
+}
+
+.agent .agent-image-last .agent-last-img-two {
+  width: 70%;
+  top: 40%;
+  right: 0;
+  position: absolute;
+  border-bottom-left-radius: 10px;
+  border-top-left-radius: 10px;
 }
