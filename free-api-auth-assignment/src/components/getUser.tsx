@@ -70,9 +70,7 @@ export default function UserProfile() {
     } catch (error) {
       console.error("Logout error:", error);
     } finally {
-      // Always clear local data and redirect
       localStorage.clear();
-      navigate("/login");
     }
   };
 

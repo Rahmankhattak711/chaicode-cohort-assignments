@@ -1,6 +1,5 @@
 import { Routes, Route } from "react-router-dom";
 import Register from "./components/Register";
-import GetUser from "./components/GetUser";
 import Login from "./components/login";
 
 function App() {
@@ -11,7 +10,6 @@ function App() {
         <Route path="/register" element={<Register />} />
         <Route path="/" element={<Login />} />
       </Routes>
-      <GetUser />
     </>
   );
 }
