@@ -1,19 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import { Link } from "react-router-dom";
-
-const userRoles = ["ADMIN"];
+import { useNavigate, Link } from "react-router-dom";
 
 export default function Login() {
-  const [formData, setFormData] = React.useState({
+  const [formData, setFormData] = useState({
     username: "",
     password: "",
-    role: userRoles[0],
   });
 
-  const [loading, setLoading] = React.useState(false);
+  const [loading, setLoading] = useState(false);
+  const navigate = useNavigate();
 
-  const submitLoginHandler = async () => {
+  const submitLoginHandler = async (e: React.FormEvent) => {
+    e.preventDefault();
+
     if (!formData.username || !formData.password) {
       toast.error("Please fill in all fields");
       return;
@@ -27,24 +27,32 @@ export default function Login() {
         {
           method: "POST",
           headers: { "Content-Type": "application/json" },
+          credentials: "include",        // Important for cookies/sessions
           body: JSON.stringify({
             username: formData.username,
             password: formData.password,
           }),
-        },
+        }
       );
 
       const data = await response.json();
 
       if (response.ok) {
         toast.success("Login successful! Welcome back 🎉");
-        console.log("Login success:", data);
+
+        // Save token if returned (some APIs return accessToken)
+        if (data.data?.accessToken) {
+          localStorage.setItem("accessToken", data.data.accessToken);
+        }
+
+        // Redirect to user profile / dashboard
+        navigate("/getuser");
       } else {
         toast.error(data.message || "Invalid username or password");
       }
     } catch (error) {
       toast.error("Something went wrong. Please try again.");
-      console.log("Login error:", error);
+      console.error("Login error:", error);
     } finally {
       setLoading(false);
     }
@@ -52,17 +60,14 @@ export default function Login() {
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const { name, value } = e.target;
-    setFormData((prev) => ({
-      ...prev,
-      [name]: value,
-    }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   return (
     <>
       <Toaster position="top-center" />
 
-      <div className="min-h-screen w-full bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 flex items-center justify-center p-4">
+      <div className="min-h-screen bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 flex items-center justify-center p-4">
         <div className="w-full max-w-md">
           <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl p-8">
             <div className="text-center mb-8">
@@ -73,13 +78,7 @@ export default function Login() {
               <p className="text-slate-400 mt-2">Sign in to continue</p>
             </div>
 
-            <form
-              onSubmit={(e) => {
-                e.preventDefault();
-                submitLoginHandler();
-              }}
-              className="space-y-6"
-            >
+            <form onSubmit={submitLoginHandler} className="space-y-6">
               <div>
                 <label className="block text-sm font-medium text-slate-300 mb-1.5">
                   Username
@@ -113,7 +112,7 @@ export default function Login() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-4 rounded-2xl transition-all flex items-center justify-center gap-2 disabled:opacity-70 mt-4"
+                className="w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold py-4 rounded-2xl transition-all flex items-center justify-center gap-2 disabled:opacity-70"
               >
                 {loading ? (
                   <>
