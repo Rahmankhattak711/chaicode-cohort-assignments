@@ -30,7 +30,7 @@ export default function Login() {
             username: formData.username,
             password: formData.password,
           }),
-        }
+        },
       );
 
       const data = await response.json();
@@ -59,12 +59,11 @@ export default function Login() {
 
   return (
     <>
-      <Toaster position="top-center" richColors closeButton />
+      <Toaster position="top-center" />
 
       <div className="min-h-screen w-full bg-gradient-to-br from-slate-900 via-purple-950 to-slate-900 flex items-center justify-center p-4">
         <div className="w-full max-w-md">
           <div className="bg-white/10 backdrop-blur-xl border border-white/20 rounded-3xl shadow-2xl p-8">
-
             <div className="text-center mb-8">
               <div className="mx-auto w-16 h-16 bg-gradient-to-br from-purple-500 to-pink-500 rounded-2xl flex items-center justify-center mb-4">
                 <span className="text-3xl">🔑</span>
@@ -128,7 +127,10 @@ export default function Login() {
 
             <p className="text-center text-slate-500 text-sm mt-6">
               Don't have an account?{" "}
-              <a href="/Register" className="text-purple-400 hover:text-purple-300 font-medium">
+              <a
+                href="/Register"
+                className="text-purple-400 hover:text-purple-300 font-medium"
+              >
                 Create one
               </a>
             </p>
