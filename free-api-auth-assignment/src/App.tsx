@@ -1,12 +1,14 @@
+import { Routes, Route } from "react-router-dom";
 import Login from "./components/Login";
 import Register from "./components/Register";
 
 function App() {
   return (
-    <div className="w-full h-screen flex justify-between">
-      <Register/>
-      <Login/>
-    </div>
+    <Routes>
+      <Route path="/login" element={<Login />} />
+      <Route path="/register" element={<Register />} />
+      <Route path="/" element={<Login />} />
+    </Routes>
   );
 }
 

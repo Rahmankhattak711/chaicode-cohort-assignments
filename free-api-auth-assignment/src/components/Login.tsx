@@ -1,5 +1,6 @@
 import React from "react";
 import toast, { Toaster } from "react-hot-toast";
+import { Link } from "react-router-dom";
 
 const userRoles = ["ADMIN"];
 
@@ -127,12 +128,12 @@ export default function Login() {
 
             <p className="text-center text-slate-500 text-sm mt-6">
               Don't have an account?{" "}
-              <a
-                href="/Register"
+              <Link
+                to="/register"
                 className="text-purple-400 hover:text-purple-300 font-medium"
               >
                 Create one
-              </a>
+              </Link>
             </p>
           </div>
         </div>
