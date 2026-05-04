@@ -5,7 +5,7 @@ function App() {
   return (
     <div className="w-full h-screen flex justify-between">
       <Register/>
-      {/* <Login/> */}
+      <Login/>
     </div>
   );
 }
