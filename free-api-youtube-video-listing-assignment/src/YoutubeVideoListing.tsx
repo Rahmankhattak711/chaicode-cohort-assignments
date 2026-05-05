@@ -62,7 +62,7 @@ export default function YoutubeVideoListing() {
   return (
     <div className="min-h-screen bg-gray-950 text-white py-8">
       <div className="max-w-7xl mx-auto px-4">
-        <h1 className="text-4xl font-bold mb-10 text-center">Explore Videos</h1>
+        <h1 className="text-4xl font-bold mb-10 text-center">FreeApi Youtube videos Listing</h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5 gap-6">
           {videosData.map((video) => {
