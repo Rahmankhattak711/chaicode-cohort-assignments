@@ -16,7 +16,6 @@
 -- ADD COLUMN sold_price VARCHAR(50) DEFAULT '0';
 -- ALTER TABLE ipl_players_auction
 -- ADD COLUMN sold_to_team VARCHAR(50) DEFAULT 'None';
-
 -- INSERT INTO ipl_players_auction(name,player_base_price,player_role,country,age,team_name,auction_year,is_sold,sold_price,sold_to_team)
 -- VALUES('Rohit Sharma','100','Batsman','India',32,'Rajasthan Royals',2022,FALSE,'0','None');
 -- INSERT INTO ipl_players_auction(name,player_base_price,player_role,country,age,team_name,auction_year,is_sold,sold_price,sold_to_team)
@@ -29,7 +28,9 @@
 -- VALUES('Kane Williamson','140','Batsman','New Zealand',32,'Auckland Aces',2022,FALSE,'0','None');
 -- INSERT INTO ipl_players_auction(name,player_base_price,player_role,country,age,team_name,auction_year,is_sold,sold_price,sold_to_team)
 -- VALUES('David Warner','110','Batsman','Australia',34,'Sunrisers Hyderabad',2022,FALSE,'0','None');
-
 -- SELECT * FROM ipl_players_auction WHERE country = 'South Africa';
 -- SELECT name, player_role, age FROM ipl_players_auction WHERE age >= 30;
-
+SELECT *
+FROM ipl_players_auction
+WHERE team_name = 'Royal Challengers Bangalore'
+  OR team_name = 'Mumbai Indians'
