@@ -30,7 +30,13 @@
 -- VALUES('David Warner','110','Batsman','Australia',34,'Sunrisers Hyderabad',2022,FALSE,'0','None');
 -- SELECT * FROM ipl_players_auction WHERE country = 'South Africa';
 -- SELECT name, player_role, age FROM ipl_players_auction WHERE age >= 30;
-SELECT *
+-- SELECT *
+-- FROM ipl_players_auction
+-- WHERE team_name = 'Royal Challengers Bangalore'
+--   OR team_name = 'Mumbai Indians'
+SELECT name,
+  ipl_players_auction,
+  team_name
 FROM ipl_players_auction
-WHERE team_name = 'Royal Challengers Bangalore'
-  OR team_name = 'Mumbai Indians'
+ORDER BY sold_price DESC
+LIMIT 2 OFFSET 2;
