@@ -1,7 +1,7 @@
 # ☕ Chai Aur Cohort – 2026 (Pre-Cohort Phase)
 
 <p align="center">
-  <img src="https://raw.githubusercontent.com/forgewithharsh/chai-aur-cohort-2026-prep/main/assets/cohort26.jpeg" alt="Chai Aur Cohort 2026" width="700"/>
+  <img src="https://raw.githubusercontent.com/forgewithharsh/chai-aur-cohort-2026-prep/main/assets/cohort26.jpeg" alt="Chai Aur Cohort 2026" width="1400"/>
 </p>
 
 ---
