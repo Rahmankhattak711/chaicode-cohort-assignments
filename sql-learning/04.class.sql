@@ -1,7 +1,13 @@
-CREATE TABLE restaurants_menu(
+CREATE TABLE student (
   id SERIAL PRIMARY KEY,
-  restaurant_id INTEGER NOT NULL,
-  name VARCHAR(255) NOT NULL,
-  price DECIMAL(10, 2) NOT NULL,
-  FOREIGN KEY (restaurant_id) REFERENCES restaurants(id)
+  name VARCHAR(100) NOT NULL,
+  email VARCHAR(100) UNIQUE NOT NULL,
+)
+
+
+CREATE TABLE internships(
+  id SERIAL PRIMARY KEY,
+  student_id INT REFERENCES student(id),
+  company_name VARCHAR(100) NOT NULL,
+  start_date DATE NOT NULL,
 )
