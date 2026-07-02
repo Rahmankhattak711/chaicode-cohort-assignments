@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Web-Scokets</title>
+<script src="https://cdn.socket.io/4.8.3/socket.io.min.js" integrity="sha384-kzavj5fiMwLKzzD1f8S7TeoVIEi7uKHvbTA3ueZkrzYq75pNQUiUi6Dy98Q3fxb0" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1>Web-Scokets</h1>
+
+  <form>
+    <input type="text" id="message">
+    <button type="submit">Send</button>
+  </form>
+
+<script>
+  const form = document.querySelector('form');
+  const messageInput = document.getElementById('message');
+
+  // Initialize the Socket.io client connection
+  const socket = io('http://localhost:3000');
+
+  // Optional: Verify connection state in console
+  socket.on('connect', () => {
+    console.log('Connected to server with ID:', socket.id);
+  });
+
+  form.addEventListener('submit', (event) => {
+    event.preventDefault();
+    const message = messageInput.value.trim();
+
+    if (!message) return; // Don't send empty messages
+
+    // 1. Check if connected using Socket.io's API (socket.connected)
+    if (socket.connected) {
+      // 2. Use socket.emit() to send an event name + data payload
+      socket.emit('chat message', message);
+      messageInput.value = '';
+    } else {
+      console.error('Socket.io is not connected.');
+    }
+  });
+</script>
+</body>
+</html>
