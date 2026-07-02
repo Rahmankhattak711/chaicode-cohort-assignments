@@ -3,44 +3,268 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Web-Scokets</title>
-<script src="https://cdn.socket.io/4.8.3/socket.io.min.js" integrity="sha384-kzavj5fiMwLKzzD1f8S7TeoVIEi7uKHvbTA3ueZkrzYq75pNQUiUi6Dy98Q3fxb0" crossorigin="anonymous"></script>
+  <title>Web-Sockets Chat</title>
+  <script src="https://cdn.socket.io/4.8.3/socket.io.min.js" integrity="sha384-kzavj5fiMwLKzzD1f8S7TeoVIEi7uKHvbTA3ueZkrzYq75pNQUiUi6Dy98Q3fxb0" crossorigin="anonymous"></script>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #1e3a2c;
+      font-family: Inter, system-ui, sans-serif;
+      color: #e7f5ff;
+    }
+
+    .chat-container {
+      width: min(430px, 100%);
+      max-width: 430px;
+      background: #0f172a;
+      border-radius: 28px;
+      box-shadow: 0 30px 60px rgba(8, 15, 26, 0.35);
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .chat-top {
+      padding: 20px 22px;
+      background: #12272b;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .status-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      background: #34d399;
+      box-shadow: 0 0 0 6px rgba(52, 211, 153, 0.16);
+    }
+
+    .status-info {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .status-title {
+      margin: 0;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #c7f0dd;
+    }
+
+    .status-subtitle {
+      margin: 0;
+      font-size: 1rem;
+      font-weight: 700;
+      color: #f8fafc;
+    }
+
+    .chat-window {
+      background: #0f172a;
+      padding: 18px 18px 14px;
+      min-height: 540px;
+      max-height: 540px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .message-row {
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+    }
+
+    .message-row.sent {
+      justify-content: flex-end;
+    }
+
+    .message-row.received {
+      justify-content: flex-start;
+    }
+
+    .avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: linear-gradient(180deg, #3b82f6 0%, #10b981 100%);
+      display: grid;
+      place-items: center;
+      color: #f8fafc;
+      font-size: 0.85rem;
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    .message-bubble {
+      max-width: 78%;
+      padding: 14px 16px;
+      border-radius: 22px;
+      position: relative;
+      display: inline-flex;
+      flex-direction: column;
+      gap: 6px;
+      word-break: break-word;
+      font-size: 0.95rem;
+    }
+
+    .message-bubble.received {
+      background: #111827;
+      color: #f8fafc;
+      border-bottom-left-radius: 6px;
+    }
+
+    .message-bubble.sent {
+      background: #134e4a;
+      color: #dcfce7;
+      border-bottom-right-radius: 6px;
+    }
+
+    .message-time {
+      font-size: 0.72rem;
+      opacity: 0.7;
+      align-self: flex-end;
+    }
+
+    .chat-form {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px 18px 18px;
+      background: #12272b;
+      border-top: 1px solid rgba(148, 163, 184, 0.12);
+    }
+
+    .chat-form input {
+      flex: 1;
+      min-width: 0;
+      padding: 14px 16px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.16);
+      background: #0f172a;
+      color: #e2e8f0;
+      font-size: 0.96rem;
+      outline: none;
+    }
+
+    .chat-form input::placeholder {
+      color: #94a3b8;
+    }
+
+    .chat-form button {
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: none;
+      background: #10b981;
+      color: #0f172a;
+      font-weight: 700;
+      cursor: pointer;
+      transition: transform 0.15s ease, background 0.15s ease;
+    }
+
+    .chat-form button:hover {
+      transform: translateY(-1px);
+      background: #22c55e;
+    }
+
+    .chat-form button:disabled {
+      opacity: 0.55;
+      cursor: not-allowed;
+      transform: none;
+    }
+  </style>
 </head>
 <body>
-  <h1>Web-Scokets</h1>
+  <div class="chat-container">
+    <div class="chat-top">
+      <div class="status-dot"></div>
+      <div class="status-info">
+        <p class="status-title">WE ARE ONLINE</p>
+        <p class="status-subtitle">Active now</p>
+      </div>
+    </div>
 
-  <form>
-    <input type="text" id="message">
-    <button type="submit">Send</button>
-  </form>
+    <div id="chat-window" class="chat-window"></div>
 
-<script>
-  const form = document.querySelector('form');
-  const messageInput = document.getElementById('message');
+    <form id="chat-form" class="chat-form">
+      <input type="text" id="message" placeholder="Type message..." autocomplete="off" />
+      <button type="submit">SEND</button>
+    </form>
+  </div>
 
-  // Initialize the Socket.io client connection
-  const socket = io('http://localhost:3000');
+  <script>
+    const chatForm = document.getElementById('chat-form');
+    const messageInput = document.getElementById('message');
+    const chatWindow = document.getElementById('chat-window');
+    const socket = io('http://localhost:3000');
+    let clientId = null;
 
-  // Optional: Verify connection state in console
-  socket.on('connect', () => {
-    console.log('Connected to server with ID:', socket.id);
-  });
+    function addMessage(payload, type = 'received') {
+      const messageRow = document.createElement('div');
+      messageRow.className = `message-row ${type}`;
 
-  form.addEventListener('submit', (event) => {
-    event.preventDefault();
-    const message = messageInput.value.trim();
+      if (type === 'system') {
+        const systemMessage = document.createElement('div');
+        systemMessage.className = 'message system';
+        systemMessage.textContent = payload;
+        messageRow.appendChild(systemMessage);
+      } else {
+        if (type === 'received') {
+          const avatar = document.createElement('div');
+          avatar.className = 'avatar';
+          avatar.textContent = 'C';
+          messageRow.appendChild(avatar);
+        }
 
-    if (!message) return; // Don't send empty messages
+        const bubble = document.createElement('div');
+        bubble.className = `message-bubble ${type}`;
+        bubble.textContent = payload.message;
 
-    // 1. Check if connected using Socket.io's API (socket.connected)
-    if (socket.connected) {
-      // 2. Use socket.emit() to send an event name + data payload
+        const time = document.createElement('div');
+        time.className = 'message-time';
+        time.textContent = new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        bubble.appendChild(time);
+        messageRow.appendChild(bubble);
+      }
+
+      chatWindow.appendChild(messageRow);
+      chatWindow.scrollTop = chatWindow.scrollHeight;
+    }
+
+    socket.on('connect', () => {
+      clientId = socket.id;
+      addMessage('Connected to server.', 'system');
+    });
+
+    socket.on('disconnect', () => {
+      addMessage('Disconnected from server.', 'system');
+    });
+
+    socket.on('message', (payload) => {
+      const type = payload.id === clientId ? 'sent' : 'received';
+      addMessage(payload, type);
+    });
+
+    chatForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      const message = messageInput.value.trim();
+
+      if (!message) return;
+      if (!socket.connected) {
+        addMessage('Unable to send. Socket disconnected.', 'system');
+        return;
+      }
+
       socket.emit('chat message', message);
       messageInput.value = '';
-    } else {
-      console.error('Socket.io is not connected.');
-    }
-  });
-</script>
+      messageInput.focus();
+    });
+  </script>
 </body>
 </html>
