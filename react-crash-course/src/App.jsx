@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import { Suspense, useEffect, useState } from "react";
 import { Button } from "./components/ui/button";
+import BrokenCup from "./BrokenCup";
+import ErrorFallback from "./ErrorFallback";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -37,6 +39,10 @@ function App() {
           </ul>
         </div>
       )}
+
+      <ErrorFallback fallbackComponent={ErrorFallback}>
+        <BrokenCup />
+      </ErrorFallback>
     </div>
   );
 }
