@@ -2,6 +2,7 @@ import { Suspense, useEffect, useState } from "react";
 import { Button } from "./components/ui/button";
 import BrokenCup from "./BrokenCup";
 import ErrorFallback from "./ErrorFallback";
+import StopWatch from "./components/StopWatch";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,7 +18,8 @@ function App() {
 
   return (
     <div>
-      <h1>React Crash Course</h1>
+      <StopWatch/>
+      {/* <h1>React Crash Course</h1>
       <p>Count: {count}</p>
       <Button
         variant="default"
@@ -42,7 +44,7 @@ function App() {
 
       <ErrorFallback fallbackComponent={ErrorFallback}>
         <BrokenCup />
-      </ErrorFallback>
+      </ErrorFallback> */}
     </div>
   );
 }
